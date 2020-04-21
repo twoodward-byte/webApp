@@ -36,8 +36,8 @@ var dbo;
 //Database connected to
 client.connect(err => {
   dbo = client.db("FinalProject"); //Set database
-  app.listen(9000, '0.0.0.0', () => {
-    console.log('listening on 9000')
+  app.listen(7000, '0.0.0.0', () => {
+    console.log('listening on 7000')
   })
 });
 
