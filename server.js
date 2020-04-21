@@ -32,12 +32,12 @@ var path = require("path");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 var dbo;
-
+let serverPort = process.env.PORT || 7080;
 //Database connected to
 client.connect(err => {
   dbo = client.db("FinalProject"); //Set database
-  app.listen(7000, '0.0.0.0', () => {
-    console.log('listening on 7000')
+  app.listen(serverPort, '0.0.0.0', () => {
+    console.log('listening on 8080')
   })
 });
 
