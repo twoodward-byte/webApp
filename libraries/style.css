@@ -1,0 +1,53 @@
+.login-container {
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+#logTitle{
+    text-align: center;
+    margin-top: 0px; 
+    color:white;
+}
+
+.polaroid {
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+
+.login-form-1 {
+    padding: 3%;
+    background: #0e4d92;
+    border-radius: 30px;
+
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form-1 h3 {
+    text-align: center;
+    margin-bottom: 12%;
+    color: #fff;
+}
+
+.btnSubmit {
+    font-weight: 600;
+    width: 50%;
+    color: #0e4d92;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+}
+
+.btnRegister{
+    font-weight: 600;
+    width: 40%;
+    color: white;
+    background-color: #1b88fd;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+}
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+}

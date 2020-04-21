@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+
+    <!--Make website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Bootstrap library-->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!--My stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Custom font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <!--Favicon Resources-->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+
+    <!--Includes for various javascript libraries-->
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="popper.min.js"></script>
+    <script type="text/javascript" src="hashes.min.js"></script>
+    <script src="loginScript.js"></script>
+</head>
+
+<body>
+    <div class="container login-container">
+        <div class="col-xs-2 login-form-1">
+            <h1 id="logTitle">
+                Factory Dashboard
+            </h1>
+            <h3 class="mt-4 mb-5">Register</h3>
+            <div class="form-group mb-2">
+                <input type="email" class="form-control" id="txtUserName" placeholder="Enter email address *"
+                    name="user" required><br>
+                <input type="password" class="form-control" id="txtPassword" placeholder="Create Password *"
+                    name="password" required><br>
+                <input type="password" class="form-control" id="txtPassword2" placeholder="Repeat Password *" required
+                    oninput="check(this)"><br>
+                <div style="text-align:center;">
+                    <input type="submit" value="Submit" class="btnRegister" onclick="registerBtnClick()"> <br><br>
+                    <input type="button" value="Back" class="btnSubmit" onclick="window.location.assign('/login')"">
+                </div>
+            </div>
+
+
+            <!--Alerts-->
+            <!--Register Success Alert-->
+                <div class=" alert alert-success alert-dismissible fade show collapse" role="alert" id="alertRegister">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close"
+                        onclick="$('#alertRegister').hide()">&times;</a>
+                    <strong>Register successful.</strong>
+                </div>
+
+                <!--Caps Lock Warning Alert-->
+                <div class="alert alert-warning alert-dismissible fade show collapse" role="alert" id="alertCaps">
+                    <strong>Caps Lock on.</strong> You should check the fields above.
+                </div>
+
+                <!--User not unique alert-->
+                <div class="alert alert-danger alert-dismissible fade show collapse" role="alert" id="alertUnique">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close"
+                        onclick="$('#alertUnique').hide()">&times;</a>
+                    <strong>Username already taken</strong> Please enter a different one
+                </div>
+
+                <!--Email not valid alert-->
+                <div class="alert alert-danger alert-dismissible fade show collapse" role="alert" id="alertEmail">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close"
+                        onclick="$('#alertEmail').hide()">&times;</a>
+                    <strong>Email not valid</strong> Please check again
+                </div>
+
+                <!--Passwords not matching alert-->
+                <div class="alert alert-danger alert-dismissible fade show collapse" role="alert" id="alertPassword">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close"
+                        onclick="$('#alertPassword').hide()">&times;</a>
+                    <strong>Passwords do not match</strong> Check again
+                </div>
+
+                <!--Password empty-->
+                <div class="alert alert-danger alert-dismissible fade show collapse" role="alert"
+                    id="alertPasswordEmpty">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close"
+                        onclick="$('#alertPasswordEmpty').hide()">&times;</a>
+                    <strong>Passwords is empty</strong> Check again
+                </div>
+            </div>
+        </div>
+</body>
+
+<script>
+    var input = document.getElementById("txtPassword");
+    var text = document.getElementById("alertWarning");
+    var users;
+
+    //Hide alerts
+    function hideAlerts() {
+        $("#alertLogin").hide();
+        $('#alertCaps').hide();
+        $('#alertRegister').hide();
+        $('#alertUnique').hide();
+        $('#alertEmail').hide();
+        $('#alertPassword').hide();
+        $('#alertPasswordEmpty').hide();
+    }
+
+    hideAlerts();
+
+
+    //Make this self contained, taking two parameters
+    function check(input) {
+        if (input.value != document.getElementById('txtPassword').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
+
+    //Resets all input fields on the register page
+    function resetInputFields() {
+        $('#txtUserName').val("");
+        $('#txtPassword').val("");
+        $('#txtPassword2').val("");
+    }
+
+    startListeningCaps(document.getElementById("txtPassword"), $('#alertCaps'));
+    startListeningCaps(document.getElementById("txtPassword2"), $('#alertCaps'));
+    startListeningEnter(document.getElementById("txtPassword2"));
+</script>

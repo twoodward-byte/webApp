@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>About</title>
+  <!--Custom font-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <!--Jquery-->
+  <script src="jquery-3.4.1.min.js"></script>
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!--My stylesheet-->
+  <link rel="stylesheet" href="style.css">
+
+
+  <!--Favicon Resources-->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+  <!--My script-->
+  <script src="script.js"></script>
+
+  <!--Make website responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+  <h1 style="float:left" class="ml-3"> <img class="mb-2" src="baseline_work_black_18dp.png" width="30"
+      height="30" alt="">
+    About</h1>
+  <a style="position:relative;float:right;text-align: right; margin-top: 10px; z-index: 1000;" class="nav-link" href="#"
+    onclick="logout()">Logout</a>
+  <div style="clear:both;"></div>
+  <div id="navDiv"></div> <!--Navigation Bar goes here-->
+  <div id="mainContent" style="display: none;">
+  <div class="jumbotron">
+    <p>Font used: Roboto Condensed <br>
+      Icon made by Freepik from <a href="http://www.flaticon.com">www.flaticon.com</a> <br>
+      Libraries used: <a href="https://jquery.com/">jQuery</a>,
+      <a href="https://getbootstrap.com/">Bootstrap</a>,
+       <a href="https://popper.js.org/">Popper.js</a>, 
+       <a href="https://developers.google.com/chart">Google Charts</a>
+    </p>
+  </div>
+  <script>
+    jQuery(document).ready(function () {
+      loadNavbar();
+      $('#mainContent').fadeIn(200);
+    });
+  </script>
+  </div>
+</body>
+</html>
