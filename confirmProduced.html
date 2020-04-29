@@ -91,7 +91,7 @@
 
     var dropdown = $("#prodNameSelect");
 
-    $.getJSON("http://localhost:9000/partsasync", function (data) {
+    $.getJSON("/partsasync", function (data) {
       $.each(data, function (key, entry) {
         dropdown.append($('<option></option>').attr('value', entry.abbreviation).text(entry.name));
       })
